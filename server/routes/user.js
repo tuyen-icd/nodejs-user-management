@@ -8,6 +8,8 @@ router.get('/testapp', userController.userPage);
 // router.post('/send-notification', userController.sendNotificationTestApp);
 router.post('/post-notification', userController.postNotification);
 
+router.put('/update-notification/:id', userController.putNotification);
+
 router.get('/get-notification', userController.getNotification);
 
 router.delete('/delete-notification/:id', userController.deleteNotification);

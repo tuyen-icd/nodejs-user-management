@@ -38,6 +38,16 @@ exports.postNotification = async (req, res) => {
     }
 };
 
+exports.putNotification = async (req, res) => {
+    try {
+        await User.updateOne({ _id: req.params.id }, { isCheck: true });
+        res.status(200).json({ success: true, message: "Update success" });
+    } catch (error) {
+        console.log("Error in updateNotification:", error);
+        res.status(500).json({ success: false, message: "Failed to send notification" });
+    }
+}
+
 
 exports.getNotification = async (req, res) => {
     try {
